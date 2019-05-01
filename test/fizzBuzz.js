@@ -27,5 +27,22 @@ unit['fizzBuzzFor30 should return array with 16,17,Fizz,19,Buzz,Fizz,22,23,Fizz,
   done();
 };
 
+unit['fizzBuzzFor100 should not throw any error'] = function(done){
+  assert.doesNotThrow(function(){
+    lib.fizzBuzzFor100(function(err, data){
+      assert.equal(err, false);
+      done();  
+    });
+  }, TypeError);
+};
+
+unit['fizzBuzzForZero should throw error'] = function(done){
+  assert.throws(function(){
+    lib.fizzBuzzForZero();
+  }, 
+  Error);
+  done();
+};
+
 // Export the test container to the test runner
 module.exports = unit;

@@ -25,6 +25,14 @@ lib.fizzBuzzFor30 = function(){
   return lib.fizzBuzzForNN(16, 15);
 };
 
+lib.fizzBuzzFor100 = function(callback){
+  callback(false, lib.fizzBuzzForNN(1, 100));
+};
+
+lib.fizzBuzzForZero = function(){
+  throw new Error('Nothing to do for zero.');
+};
+
 lib.fizzbuzz = function(numb){
   if (numb % (3*5) === 0) return 'FizzBuzz';
   if (numb % 3===0) return 'Fizz';
